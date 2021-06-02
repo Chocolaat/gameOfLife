@@ -1,0 +1,40 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "org.sch.gameoflife"
+    },
+    "jhipsterVersion": "6.10.4",
+    "applicationType": "monolith",
+    "baseName": "gameOfLifeDojo",
+    "packageName": "org.sch.gameoflife",
+    "packageFolder": "org/sch/gameoflife",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "no",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "no",
+    "devDatabaseType": "no",
+    "prodDatabaseType": "no",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "MGU2ZGE1ZTZkMWFkMGQ0OWFiZWUxZmI2YTA2Yzg2ZWNjZWExMTA3MmU0MGIzN2M5OGMxY2UxNmU0MmEwNGNiNmQ4OGEzY2I1NzA1OGM4NTAzZjQwZGFiNWEwOTY4ZTdkY2RkY2Y2OTQyMWNhMjMwNzhiMTFmZjdlYWM5YTQ5Y2Y=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "none",
+    "clientThemeVariant": "",
+    "creationTimestamp": 1622637145507,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "blueprints": []
+  }
+}
