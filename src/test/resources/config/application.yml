@@ -68,14 +68,9 @@ jhipster:
     authentication:
       jwt:
         # This token must be encoded using Base64 (you can type `echo 'secret-key'|base64` on your command line)
-        base64-secret: MGU2ZGE1ZTZkMWFkMGQ0OWFiZWUxZmI2YTA2Yzg2ZWNjZWExMTA3MmU0MGIzN2M5OGMxY2UxNmU0MmEwNGNiNmQ4OGEzY2I1NzA1OGM4NTAzZjQwZGFiNWEwOTY4ZTdkY2RkY2Y2OTQyMWNhMjMwNzhiMTFmZjdlYWM5YTQ5Y2Y=
+        base64-secret: ODRiYmVkM2I0NzhkNTYyYmExM2FlZDJhMjBiYTMwNzQwOGRlMTA4YTRiNTk5MjFhZjNiMmVhZWZlOTg0YjRkODBiN2E4NjllYzhmNzA1Mzc2YjlmZDYxMGI3ZDVjZTQzNDFiZDNkZDBiZGY4NDU1NDAxN2FiZTNmMzFhY2NiODE=
         # Token is valid 24 hours
         token-validity-in-seconds: 86400
-  metrics:
-    logs: # Reports metrics in the logs
-      enabled: true
-      report-frequency: 60 # in seconds
-
 # ===================================================================
 # Application specific properties
 # Add your own application properties here, see the ApplicationProperties class

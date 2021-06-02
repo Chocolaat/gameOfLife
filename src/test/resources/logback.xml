@@ -4,14 +4,15 @@
 <configuration scan="true">
     <include resource="org/springframework/boot/logging/logback/base.xml"/>
 
-    <logger name="org.sch.gameoflife" level="INFO"/>
+    <logger name="com.mycompany.myapp" level="INFO"/>
 
-    <logger name="io.github.jhipster" level="WARN"/>
+    <logger name="tech.jhipster" level="WARN"/>
 
     <logger name="javax.activation" level="WARN"/>
     <logger name="javax.mail" level="WARN"/>
     <logger name="javax.xml.bind" level="WARN"/>
     <logger name="ch.qos.logback" level="WARN"/>
+    <logger name="com.jayway.jsonpath" level="WARN"/>
     <logger name="com.ryantenney" level="WARN"/>
     <logger name="com.sun" level="WARN"/>
     <logger name="com.zaxxer" level="WARN"/>

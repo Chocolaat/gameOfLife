@@ -3,9 +3,9 @@ import { RouterModule } from '@angular/router';
 import { errorRoute } from './layouts/error/error.route';
 import { navbarRoute } from './layouts/navbar/navbar.route';
 import { DEBUG_INFO_ENABLED } from 'app/app.constants';
-import { Authority } from 'app/shared/constants/authority.constants';
+import { Authority } from 'app/config/authority.constants';
 
-import { UserRouteAccessService } from 'app/core/auth/user-route-access-service';
+import { UserRouteAccessService } from 'app/core/auth/user-route-access.service';
 
 const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
 
@@ -21,6 +21,10 @@ const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
           canActivate: [UserRouteAccessService],
           loadChildren: () => import('./admin/admin-routing.module').then(m => m.AdminRoutingModule),
         },
+        {
+          path: 'login',
+          loadChildren: () => import('./login/login.module').then(m => m.LoginModule),
+        },
         ...LAYOUT_ROUTES,
       ],
       { enableTracing: DEBUG_INFO_ENABLED }
@@ -28,4 +32,4 @@ const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
   ],
   exports: [RouterModule],
 })
-export class GameOfLifeDojoAppRoutingModule {}
+export class AppRoutingModule {}

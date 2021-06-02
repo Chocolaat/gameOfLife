@@ -16,16 +16,11 @@
 logging:
   level:
     ROOT: DEBUG
-    io.github.jhipster: DEBUG
-    org.sch.gameoflife: DEBUG
+    tech.jhipster: DEBUG
+    org.hibernate.SQL: DEBUG
+    com.mycompany.myapp: DEBUG
 
 spring:
-  profiles:
-    active: dev
-    include:
-      - swagger
-      # Uncomment to activate TLS for the dev profile
-      #- tls
   devtools:
     restart:
       enabled: true
@@ -35,11 +30,6 @@ spring:
   jackson:
     serialization:
       indent-output: true
-  mail:
-    host: localhost
-    port: 25
-    username:
-    password:
   messages:
     cache-duration: PT1S # 1 second, see the ISO 8601 standard
   thymeleaf:
@@ -55,28 +45,23 @@ server:
 # ===================================================================
 
 jhipster:
-  # CORS is only enabled by default with the "dev" profile, so BrowserSync can access the API
+  # CORS is only enabled by default with the "dev" profile
   cors:
-    allowed-origins: '*'
+    # Allow Ionic for JHipster by default (* no longer allowed in Spring Boot 2.4+)
+    allowed-origins: 'http://localhost:8100,http://localhost:9000'
     allowed-methods: '*'
     allowed-headers: '*'
-    exposed-headers: 'Authorization,Link,X-Total-Count'
+    exposed-headers: 'Authorization,Link,X-Total-Count,X-${jhipster.clientApp.name}-alert,X-${jhipster.clientApp.name}-error,X-${jhipster.clientApp.name}-params'
     allow-credentials: true
     max-age: 1800
   security:
     authentication:
       jwt:
         # This token must be encoded using Base64 and be at least 256 bits long (you can type `openssl rand -base64 64` on your command line to generate a 512 bits one)
-        base64-secret: MGU2ZGE1ZTZkMWFkMGQ0OWFiZWUxZmI2YTA2Yzg2ZWNjZWExMTA3MmU0MGIzN2M5OGMxY2UxNmU0MmEwNGNiNmQ4OGEzY2I1NzA1OGM4NTAzZjQwZGFiNWEwOTY4ZTdkY2RkY2Y2OTQyMWNhMjMwNzhiMTFmZjdlYWM5YTQ5Y2Y=
+        base64-secret: ODRiYmVkM2I0NzhkNTYyYmExM2FlZDJhMjBiYTMwNzQwOGRlMTA4YTRiNTk5MjFhZjNiMmVhZWZlOTg0YjRkODBiN2E4NjllYzhmNzA1Mzc2YjlmZDYxMGI3ZDVjZTQzNDFiZDNkZDBiZGY4NDU1NDAxN2FiZTNmMzFhY2NiODE=
         # Token is valid 24 hours
         token-validity-in-seconds: 86400
         token-validity-in-seconds-for-remember-me: 2592000
-  mail: # specific JHipster mail property, for standard properties see MailProperties
-    base-url: http://127.0.0.1:8080
-  metrics:
-    logs: # Reports metrics in the logs
-      enabled: false
-      report-frequency: 60 # in seconds
   logging:
     use-json-format: false # By default, logs are not in Json format
     logstash: # Forward logs to logstash over a socket, used by LoggingConfiguration

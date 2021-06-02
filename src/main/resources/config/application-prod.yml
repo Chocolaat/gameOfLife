@@ -16,8 +16,8 @@
 logging:
   level:
     ROOT: INFO
-    io.github.jhipster: INFO
-    org.sch.gameoflife: INFO
+    tech.jhipster: INFO
+    com.mycompany.myapp: INFO
 
 management:
   metrics:
@@ -31,11 +31,6 @@ spring:
       enabled: false
     livereload:
       enabled: false
-  mail:
-    host: localhost
-    port: 25
-    username:
-    password:
   thymeleaf:
     cache: true
 
@@ -60,6 +55,7 @@ spring:
 # ===================================================================
 server:
   port: 8080
+  shutdown: graceful # see https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-graceful-shutdown
   compression:
     enabled: true
     mime-types: text/html,text/xml,text/plain,text/css, application/javascript, application/json
@@ -83,16 +79,10 @@ jhipster:
         # - In the JHipster Registry (which includes a Spring Cloud Config server)
         # - In a separate `application-prod.yml` file, in the same folder as your executable JAR file
         # - In the `JHIPSTER_SECURITY_AUTHENTICATION_JWT_BASE64_SECRET` environment variable
-        base64-secret: MGU2ZGE1ZTZkMWFkMGQ0OWFiZWUxZmI2YTA2Yzg2ZWNjZWExMTA3MmU0MGIzN2M5OGMxY2UxNmU0MmEwNGNiNmQ4OGEzY2I1NzA1OGM4NTAzZjQwZGFiNWEwOTY4ZTdkY2RkY2Y2OTQyMWNhMjMwNzhiMTFmZjdlYWM5YTQ5Y2Y=
+        base64-secret: ODRiYmVkM2I0NzhkNTYyYmExM2FlZDJhMjBiYTMwNzQwOGRlMTA4YTRiNTk5MjFhZjNiMmVhZWZlOTg0YjRkODBiN2E4NjllYzhmNzA1Mzc2YjlmZDYxMGI3ZDVjZTQzNDFiZDNkZDBiZGY4NDU1NDAxN2FiZTNmMzFhY2NiODE=
         # Token is valid 24 hours
         token-validity-in-seconds: 86400
         token-validity-in-seconds-for-remember-me: 2592000
-  mail: # specific JHipster mail property, for standard properties see MailProperties
-    base-url: http://my-server-url-to-change # Modify according to your server's URL
-  metrics:
-    logs: # Reports metrics in the logs
-      enabled: false
-      report-frequency: 60 # in seconds
   logging:
     use-json-format: false # By default, logs are not in Json format
     logstash: # Forward logs to logstash over a socket, used by LoggingConfiguration
