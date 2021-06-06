@@ -20,10 +20,16 @@ public class GameOfLifeResource {
   @PostMapping("/nextGenerationSolution")
   public GameOfLifeDTO nextGenerationSolution(@RequestBody GameOfLifeDTO game) {
 
-    game.display();
     GameOfLife res = new GameOfLifeSolution(game);
     res.computeNextGeneration();
-    res.display();
+    return new GameOfLifeDTO(res);
+  }
+
+  @PostMapping("/nextGenerationDojo")
+  public GameOfLifeDTO nextGenerationDojo(@RequestBody GameOfLifeDTO game) {
+
+    GameOfLife res = new GameOfLifeDojo(game);
+    res.computeNextGeneration();
     return new GameOfLifeDTO(res);
   }
 

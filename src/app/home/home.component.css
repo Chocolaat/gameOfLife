@@ -1,4 +1,10 @@
-.container {
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.gamesContainer {
     display: flex;
   }
   

@@ -21,7 +21,7 @@ export class GameService {
 }
 
 computeGameDojo(game: Game) {
-    return this._httpClient.post<Game>(this._nextGenerationSolution, game);
+    return this._httpClient.post<Game>(this._nextGenerationDojo, game);
 }
 
 }

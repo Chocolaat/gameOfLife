@@ -1,8 +1,17 @@
 
 <body>
-    <div>Button pannel</div>
-    <div class="container">
-        <div class="gameArea"><app-game></app-game></div>
-        <div class="gameArea"><app-game></app-game></div>
-      </div> 
+    <div class="mainContainer">
+        <buttons-pannel 
+        (onPlayEvent)="onPlay()"
+        (onForwardEvent)="onForward()"
+        (onPauseEvent)="onPause()"
+        (onResetEvent)="onReset()"
+        >
+      
+      </buttons-pannel>
+        <div class="gamesContainer">
+            <div class="gameArea"><app-game  #dojo></app-game></div>
+            <div class="gameArea"><app-game  #solution></app-game></div>
+          </div> 
+    </div>
   </body>

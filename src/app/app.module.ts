@@ -8,21 +8,25 @@ import { GameComponent } from './game/game.component';
 import { AgGridModule } from 'ag-grid-angular';
 import { HttpClientModule } from '@angular/common/http';
 import { GameService } from './game/game.service';
-import { Game } from './game/game';
+import { ButtonsService } from './buttonsPanel/buttons.service';
+import { ButtonsComponent } from './buttonsPanel/buttons.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    GameComponent
+    GameComponent,
+    ButtonsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AgGridModule.withComponents([]),
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
   ],
-  providers: [GameService],
+  providers: [GameService, ButtonsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
